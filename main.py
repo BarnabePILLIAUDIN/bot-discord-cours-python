@@ -1,7 +1,7 @@
 import discord
 import requests
 import time
-import	random
+import random
 
 
 
@@ -20,12 +20,12 @@ client = discord.Client(intents=intents)
 #constantes qui permettent de changer le bot de server
 HELLO_MESSAGE="La team roquette est de retour pour vous jouer un mauvais tours"
 #id of the welcome chanel
-WELCOME_ID = 1042750176219119687
-BOT_ID= 1042716464991440956
+WELCOME_ID = 0
+BOT_ID= 0
 #id of the server owner
-OWNER_ID = 326795337190735872
+OWNER_ID = 0
 #server id
-GUILD_ID = 1042714931969151026
+GUILD_ID = 0
 #Y mettre le token
 TOKEN = "insérer un token ici"
 #Toute les commandes et leurs descrition
@@ -60,7 +60,7 @@ async def on_message(message):
     await message.channel.send(punchline)
   
   #la commande nick permet de se renomer avec un nom aléatoir. Le bot fera une requette à une api qui renvera un nom aléatoire
-  if message.content[:6].startswith("!nick "):
+  if message.content[:6].startswith("!nick"):
     response = requests.get("https://randomuser.me/api/?results=1").json()
     name_data = response["results"][0]["name"]
     name= name_data["first"] + " "+name_data["last"]
